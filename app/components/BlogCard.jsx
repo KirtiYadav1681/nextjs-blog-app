@@ -6,7 +6,7 @@ import { formatDate } from "../lib/formatDate";
 const BlogCard = ({ blog }) => {
   return (
     <Link
-      href="/blog-detail/4"
+      href={`/blog-detail/${blog?._id}`}
       className="flex flex-row gap-8 border-1 border-black hover:shadow-lg h-[350px]"
     >
       <div className="w-4/5 h-full relative">
@@ -14,6 +14,8 @@ const BlogCard = ({ blog }) => {
           src={blog?.imageUrl}
           layout="fill"
           objectFit="cover"
+          // height={350}
+          // width={300}
           alt="blog-1-img"
           quality={100}
         />

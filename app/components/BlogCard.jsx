@@ -19,10 +19,10 @@ const BlogCard = ({ blog }) => {
         />
       </div>
       <div className="flex flex-col pr-10">
-        <p className="text-xs mt-8">{formatDate(blog.createdAt)}</p>
-        <p className="text-2xl font-bold mt-7">{blog.title}</p>
+        <p className="text-xs mt-8">{formatDate(blog?.createdAt)}</p>
+        <p className="text-2xl font-bold mt-7">{blog?.title}</p>
         <p className="text-gray-600 text-base mt-4">
-          {`${blog.completeDescription.slice(0, 70)} . . .`}
+          {`${blog?.completeDescription.slice(0, 70)} . . .`}
         </p>
       </div>
     </Link>

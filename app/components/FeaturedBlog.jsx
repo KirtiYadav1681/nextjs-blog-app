@@ -10,22 +10,6 @@ const FeaturedBlog = async () => {
   const data = await fetchBlogs();
   const featuredBlog = data.allBlogs[0];
 
-
-  // making it a client component
-  // const [featuredBlog, setFeaturedBlog] = useState(null);
-  // useEffect(() => {
-  //   const fetchBlog = async () => {
-  //     const res = await fetch("http://localhost:3000/api/all-blogs");
-  //     const data = await res.json();
-  //     if (!res.ok) {
-  //       throw new Error("Featured blog not found.");
-  //     }
-  //     setFeaturedBlog(data?.allBlogs?.[0]);
-  //   };
-  //   fetchBlog();
-  // }, []);
-
-
   return (
     <div className="relative w-[900px]">
       <Image

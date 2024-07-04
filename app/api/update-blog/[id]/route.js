@@ -5,7 +5,7 @@ export async function PUT(request, { params }) {
   const body = await request.json();
   const data = body;
 
-  const client = new MongoClient(process.env.NEXT_PUBLIC_MONGODB_URI, {
+  const client = new MongoClient(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

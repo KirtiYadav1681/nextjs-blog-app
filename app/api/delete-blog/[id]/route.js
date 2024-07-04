@@ -4,7 +4,7 @@ export async function DELETE(request, { params }) {
   const { id } = params;
     console.log(id, "id cvsdgbzcjnmkcl,")
   
-  const client = new MongoClient(process.env.NEXT_PUBLIC_MONGODB_URI, {
+  const client = new MongoClient(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

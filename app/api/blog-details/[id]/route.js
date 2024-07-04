@@ -14,7 +14,7 @@ export async function GET(request, { params }) {
     const collection = db.collection("blog-data");
 
     const blog = await collection.findOne({ _id: new ObjectId(id) });
-
+    
     if (!blog) {
       return new Response(
         JSON.stringify({

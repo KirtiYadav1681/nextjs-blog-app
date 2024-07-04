@@ -1,32 +1,22 @@
-"use client"
+// SERVER SIDE RENDERING
+import React from "react";
+import BlogDetailCard from "@/app/components/BlogDetailCard";
+import { fetchBlogDetail } from "@/app/lib/fetchBlogs";
+import ErrorPage from "@/app/components/ErrorPage";
 
-import React, {useEffect, useState} from 'react'
-import { usePathname } from 'next/navigation'
-import BlogDetailCard from '@/app/components/BlogDetailCard';
+const BlogDetailPage = async ({ params }) => {
+  const { id } = params;
+  const data = await fetchBlogDetail(id);
 
-const page = () => {
-  const pathName = usePathname();
-  const id = pathName.split("/")[2];
-  const [blogData, setBlogData] = useState(null);
-
-  useEffect(() => {
-    const getBlogDetail = async () => {
-      const res = await fetch(`/api/blog-details/${id}`);
-      const data = await res.json();
-      if(data.success){
-        setBlogData(data.blog)
-      } else{
-        alert(data.message);
-      }
-    }
-    getBlogDetail();
-  },[])
+  if (!data.success) {
+    return <ErrorPage message={data.message}/>;
+  }
 
   return (
-    <div className='w-[70%] mx-[15%] mt-[150px]'>
-      <BlogDetailCard />
+    <div className="w-[70%] mx-[15%] my-[150px]">
+      <BlogDetailCard blog={data.blog} />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default BlogDetailPage;

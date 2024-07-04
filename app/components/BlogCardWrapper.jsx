@@ -7,7 +7,7 @@ const BlogCardWrapper = async () => {
   const allBlogs = data.allBlogs;
 
   return (
-    <div className="flex flex-col gap-14 mt-20 mr-16">
+    <div className="flex flex-col gap-14 mt-20 w-[80%]">
       {allBlogs?.map((blog) => (
         <BlogCard blog={blog} />
       ))}

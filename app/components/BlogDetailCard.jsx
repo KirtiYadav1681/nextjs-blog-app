@@ -12,7 +12,7 @@ const BlogDetailCard = ({ blog}) => {
           {blog?.smallDescription}
         </p>
         <div className="relative w-[100%] h-[500px]">
-          <Image src={blog?.imageUrl} layout="fill" alt="blog-detail" />
+          <Image src={blog?.imageUrl} height={1000} width={1000} alt="blog-detail" priority/>
         </div>
         {blog?.quote && (
           <div className="border-l-4 border-b-0 border-t-0 border-r-0 border-green-700 pl-7 my-10 pr-10 py-3">

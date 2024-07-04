@@ -18,6 +18,7 @@ const FeaturedBlog = async () => {
         height={900}
         width={900}
         className="mt-3 border-1 border-black border-b-0"
+        priority
       />
       <div className="absolute top-0 bg-white py-3 px-14 border-1 border-black">
         <p className="tracking-[8px] text-xl uppercase">Featured Post</p>

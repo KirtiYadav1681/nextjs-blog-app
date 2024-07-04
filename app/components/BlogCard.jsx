@@ -12,10 +12,10 @@ const BlogCard = ({ blog }) => {
       <div className="w-4/5 h-full relative">
         <Image
           src={blog?.imageUrl}
-          layout="fill"
-          objectFit="cover"
-          // height={350}
-          // width={300}
+          // layout="fill"
+          // objectFit="cover"
+          height={350}
+          width={300}
           alt="blog-1-img"
           quality={100}
         />

@@ -3,10 +3,7 @@ import { MongoClient, ObjectId } from "mongodb";
 export async function GET(request, { params }) {
   const { id } = params;
 
-  const client = new MongoClient(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  const client = new MongoClient(process.env.MONGODB_URI);
 
   try {
     await client.connect();
